@@ -179,7 +179,7 @@ const setupProfileHandlers = createStateHandler(APP_STATES.START, {
                         });
 
                         
-                        this.emit(':ask', speechOutput, repromptText, personName);
+                        selfy.emit(':ask', speechOutput, repromptText, personName);
                     }
 
                 });
@@ -251,7 +251,7 @@ const setupProfileHandlers = createStateHandler(APP_STATES.START, {
             skills = this.event.request.intent.slots.addskill.value;
             currentQuestionIndex = currentQuestionIndex + 1;
 
-            speechOutput = `I have saved your profile. ${this.attributes.education} Degree and interested in ${this.attributes.skills}.`;
+            speechOutput = `I have saved your profile. `;
             speechOutput += `You can ask me to lookup jobs by location or by skills. For example, ask me to find jobs in San Francisco.`;
             repromptText = speechOutput;
             this.handler.state = APP_STATES.START;
@@ -325,7 +325,7 @@ const setupProfileHandlers = createStateHandler(APP_STATES.START, {
 
     },
     'AMAZON.YesIntent': function () {
-        const speechOutput = 'Ok! Saved to your profile. I could email them to you in near future!';
+        const speechOutput = 'Ok! Saved to your profile. I could email them to you in the near future!';
         var jobs = this.attributes.jobs;
         var link = jobSaveUrl + '?' + 'name=' + this.attributes.personName + '&data=' + JSON.stringify(jobs);
         var selfy = this;
