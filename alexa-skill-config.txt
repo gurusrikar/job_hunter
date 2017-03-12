@@ -1,0 +1,82 @@
+Skill Information:
+	Name 				Job Hunter
+	Invocation Name 	job hunter
+
+Intent Schema:
+	{
+	  "intents": [
+	    {
+	      "intent": "JobManagerSetup",
+	      "slots": [
+	        {
+	          "name": "personName",
+	          "type": "AMAZON.Person"
+	        },
+	        {
+	          "name": "education",
+	          "type": "LIST_OF_DEGREES"
+	        },
+	        {
+	          "name": "experienceInMonths",
+	          "type": "AMAZON.DURATION"
+	        },
+	        {
+	          "name": "addskill",
+	          "type": "LIST_OF_SKILLS"
+	        }
+	      ]
+	    },
+	    {
+	      "intent": "JobManagerSearch",
+	      "slots": [
+	        {
+	          "name": "location",
+	          "type": "LIST_OF_CITIES"
+	        },
+	        {
+	          "name": "skill",
+	          "type": "LIST_OF_SKILL_TYPES"
+	        }
+	      ]
+	    },
+	    {
+	      "intent": "AMAZON.YesIntent"
+	    },
+	    {
+	      "intent": "AMAZON.NoIntent"
+	    }
+	  ]
+	};
+
+
+Custom Slot Types:
+
+Type					Values	
+LIST_OF_CITIES			San Franscisco | New York | Phoenix	Edit
+LIST_OF_DEGREES			Masters | Bachelors | Graduate | Undergraduate | PhD	Edit
+LIST_OF_SKILLS			Python | C | Java | Javascript	Edit
+LIST_OF_SKILL_TYPES		Python | Java | C | Javascript
+
+
+Sample Utterances:
+
+JobManagerSetup		My name is {personName}
+JobManagerSetup		I am {personName}
+
+JobManagerSetup		I am a {education}
+JobManagerSetup		I study {education}
+
+JobManagerSetup		I worked for {experienceInMonths}
+JobManagerSetup		I have {experienceInMonths} of work experience
+JobManagerSetup		I have been in the industry for {experienceInMonths}
+
+JobManagerSetup		I know {addskill}
+JobManagerSetup		I am good at {addskill}
+
+
+JobManagerSearch	Find me jobs
+JobManagerSearch	Find me jobs in {location}
+JobManagerSearch	Find me jobs at {location}
+JobManagerSearch	Find me jobs which require {skill}
+JobManagerSearch	Find me {skill} jobs
+JobManagerSearch	Find me {skill} jobs in {location}

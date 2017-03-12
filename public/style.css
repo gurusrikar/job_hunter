@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    font-family: "HelveticaNeue";
+}
+
+.heading {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "HelveticaNeue";
+    width: 500px;
+}
+
+.monthRowHeading {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "HelveticaNeue";
+}
+
+.chartHolder {
+    width: 500px;
+    height: 200px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#slider-1-chart-1-container {
+    margin-left: 40px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+#slider-1-legend-1-container {
+    font-size: 18px;
+    color: white;
+    font-family: "HelveticaNeue";
+    text-align: center;
+}
+
+#ActiveUsers {
+    font-size: 1000%;
+    font-family: LiquidCrystal;
+    color: #c0c0c0;
+    height: 150px;
+    text-align: center;
+}
+
+.row3heading {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "HelveticaNeue";
+    width: 650px;
+}
+
+#slider-1-chart-6-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#deviceComparison {
+    margin-left: 100px;
+    margin-right: 100px;
+}
