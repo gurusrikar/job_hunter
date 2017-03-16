@@ -1,11 +1,9 @@
 /* eslint-disable  func-names */
 /* eslint quote-props: ["error", "consistent"]*/
 /**
- * This sample demonstrates a simple skill built with the Amazon Alexa Skills
- * nodejs skill development kit.
- * This sample supports en-US lauguage.
- * The Intent Schema, Custom Slots and Sample Utterances for this skill, as well
- * as testing instructions are located at https://github.com/alexa/skill-sample-nodejs-trivia
+ * This is built from the nodejs sample lamda code available on AWS.
+ * - nodejs skill development kit -.
+ * So, you would find unused code that was not removed. Because, well, it was a Hackathon.
  **/
 
 'use strict';
@@ -13,6 +11,7 @@
 const Alexa = require('alexa-sdk');
 const questions = require('./question');
 var http = require('http');
+var SERVER_URL = 'http://your-express-server-hostname.com';
 
 const GAME_NAME = 'Reindeer Trivia'; // TODO Be sure to change this for your skill.
 const ANSWER_COUNT = 4; // The number of possible answers per trivia question.
@@ -28,10 +27,10 @@ const APP_STATES = {
     // SEARCH: '_SEARCHMODE'
 };
 
-var profileUrl = 'http://ec2-35-163-34-220.us-west-2.compute.amazonaws.com:5003/jobs/setup';
-var jobSearchUrl = 'http://ec2-35-163-34-220.us-west-2.compute.amazonaws.com:5003/jobs/jobs';
-var personSavedUrl = 'http://ec2-35-163-34-220.us-west-2.compute.amazonaws.com:5003/jobs/user-exists'
-var jobSaveUrl = 'http://ec2-35-163-34-220.us-west-2.compute.amazonaws.com:5003/jobs/savejobs'
+var profileUrl = SERVER_URL + '/jobs/setup';
+var jobSearchUrl = SERVER_URL + '/jobs/jobs';
+var personSavedUrl = SERVER_URL + '/jobs/user-exists';
+var jobSaveUrl = SERVER_URL + '/jobs/savejobs';
 
 const PROFILE_QUESTIONS = [
     "What is your name?",
